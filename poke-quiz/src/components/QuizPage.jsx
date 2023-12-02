@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import { useState, useEffect } from "react";
+import pikaLoading from "/src/assets/pika-loading.gif";
 
 export default function QuizPage() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -9,7 +11,7 @@ export default function QuizPage() {
     const getRandomPokemon = async () => {
       //array con quantità di card da creare
       const randomPokemonNumbers = Array.from(
-        { length: 5 },
+        { length: 6 },
         () => Math.floor(Math.random() * 1000) + 1
       ); // Genera 3 numeri casuali da 1 a 1000
       const pokemonPromises = randomPokemonNumbers.map((number) =>
@@ -19,18 +21,30 @@ export default function QuizPage() {
       );
       const pokemonData = await Promise.all(pokemonPromises);
       setPokemonData(pokemonData);
-      setLoading(false);
+      setTimeout(() => {
+        setLoading(false);
+      }, 1300);
     };
 
     getRandomPokemon();
   }, []);
 
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <>
+        <p>⏳ Loading ⌛️</p>
+        <img src={pikaLoading} alt="pika-loading" className="items-center" />
+      </>
+    );
   }
 
   return (
     <div className="App">
+      <div className="back">
+        <Link to="/">
+          <a href=""> 👈 Back</a>
+        </Link>
+      </div>
       <div className="max-w-screen-lg mx-auto">
         <h1 className="text-center text-5xl font-bold mb-8">Pokemon Quiz</h1>
         <div className="grid grid-cols-3 gap-4 p-4">
