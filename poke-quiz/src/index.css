@@ -1,6 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 @keyframes rainbow {
   0% {
@@ -29,12 +43,8 @@
   }
 }
 
-.animate-rainbow {
-  animation: rainbow 20s infinite;
-}
-
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Nova Square", sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -47,4 +57,15 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+.animate-rainbow {
+  animation: rainbow 50s infinite;
+}
+
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 9s ease infinite alternate;
+  -moz-animation: animatedgradient 9s ease infinite alternate;
+  animation: animatedgradient 9s ease infinite alternate;
 }

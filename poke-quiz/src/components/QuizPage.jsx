@@ -23,7 +23,7 @@ export default function QuizPage() {
       setPokemonData(pokemonData);
       setTimeout(() => {
         setLoading(false);
-      }, 1300);
+      }, 1700);
     };
 
     getRandomPokemon();
@@ -31,10 +31,14 @@ export default function QuizPage() {
 
   if (loading) {
     return (
-      <>
-        <p>⏳ Loading ⌛️</p>
-        <img src={pikaLoading} alt="pika-loading" className="items-center" />
-      </>
+      <div className="app grid grid-cols-1 place-items-center">
+        <img
+          src={pikaLoading}
+          alt="pika-loading"
+          className="items-center mb-5 w-72 drop-shadow-xl mt-28"
+        />
+        <p className="text-6xl drop-shadow-xl mt-6">⏳ Loading ⌛️</p>
+      </div>
     );
   }
 
