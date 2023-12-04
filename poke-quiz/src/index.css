@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes flick {
+  0% {
+    background-position: top left;
+  }
+  100% {
+    background-position: top right;
+  }
+}
+
 @keyframes animatedgradient {
   0% {
     background-position: 0% 50%;
@@ -68,4 +77,30 @@
   -webkit-animation: animatedgradient 9s ease infinite alternate;
   -moz-animation: animatedgradient 9s ease infinite alternate;
   animation: animatedgradient 9s ease infinite alternate;
+}
+
+.flicker {
+  color: #fffefee1;
+  background: -webkit-gradient(
+      linear,
+      left top,
+      right top,
+      from(#ffffff),
+      to(#1d1c1c),
+      color-stop(0.8, #ffffff)
+    )
+    no-repeat;
+  background: gradient(
+      linear,
+      left top,
+      right top,
+      from(#222),
+      to(#222),
+      color-stop(0.8, #fff)
+    )
+    no-repeat;
+  background-size: 80px 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: flick 0.7s infinite;
 }

@@ -4,8 +4,8 @@ import pokeQuizLogo from "/poke-quiz-logo(createdByMikixiT).svg";
 export default function WelcomePage() {
   return (
     <div className="app grid grid-cols-1 place-items-center">
-      <img src={pokeQuizLogo} className="w-60 content-center drop-shadow-xl" />
-      <h1 className="text-7xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl mb-8">
+      <img src={pokeQuizLogo} className="w-40 content-center drop-shadow-xl" />
+      <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl mb-8">
         Welcome Dear Trainer!
       </h1>
       <Link to="/Quiz">
