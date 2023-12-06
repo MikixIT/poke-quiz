@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-
+//raw.githubuserc†ontent.com/PokeAPI/sprites/master/sprites/pokemon/329.png
 export default function PokemonCard({ name, image }) {
   return (
     <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-red-600 dark:border-red-600">
