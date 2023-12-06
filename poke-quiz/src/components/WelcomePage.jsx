@@ -4,7 +4,11 @@ import pokeQuizLogo from "/poke-quiz-logo(createdByMikixiT).svg";
 export default function WelcomePage() {
   return (
     <div className="app grid grid-cols-1 place-items-center">
-      <img src={pokeQuizLogo} className="w-40 content-center drop-shadow-xl" />
+      <img
+        src={pokeQuizLogo}
+        alt="logo"
+        className="w-40 content-center drop-shadow-xl"
+      />
       <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl mb-8">
         Welcome Dear Trainer!
       </h1>
@@ -13,11 +17,16 @@ export default function WelcomePage() {
           Play
         </button>
       </Link>
-      <p className="m-10">
-        Why are you here Trainer? Will you be able to guess the name of these
-        Pokemon?
+      <p className="m-5 text-xl">Hey! why are you here Trainer?</p>
+      <p className="">
+        {" "}
+        Oh, there why you are here, Will you be able to guess the name of these{" "}
+        <span className="text-xl cursor-pointer font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl ">
+          {" "}
+          <a href="https://pokeapi.co/">Pokemon?</a>
+        </span>
       </p>
-      <p>
+      <p className="mt-20 text-sm">
         Try the challenge created by{" "}
         <span className="text-xl cursor-pointer font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl ">
           <a href="https://www.linkedin.com/in/michaeltorresdeveloper/">

@@ -68,6 +68,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+body,
+html {
+  overflow: hidden;
+}
+
 .animate-rainbow {
   animation: rainbow 50s infinite;
 }
