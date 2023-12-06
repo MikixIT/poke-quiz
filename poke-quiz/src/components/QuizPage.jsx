@@ -83,7 +83,7 @@ export default function QuizPage() {
               key={pokemon.id}
               name={pokemon.name}
               image={pokemon.sprites.front_default}
-              // Aggiungi l'evento onClick per gestire la selezione della risposta
+              /// Aggiungi l'evento onClick per gestire la selezione della risposta
               onClick={() => handleCardClick(pokemon.name)}
             />
           ))}
