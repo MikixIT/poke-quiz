@@ -2,12 +2,15 @@ import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import { useState, useEffect } from "react";
 import pikaLoading from "/src/assets/pika-loading.gif";
+import { useCopyToClipboard } from "./Copyclipboard";
 
 export default function QuizPage() {
   const [pokemonData, setPokemonData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [quizPokemon, setQuizPokemon] = useState(null);
   const [pokeScore, setPokeScore] = useState(0);
+  const { addCopyListener, removeCopyListener } =
+    useCopyToClipboard("do not cheat bro");
 
   useEffect(() => {
     const getRandomPokemon = async () => {
@@ -22,7 +25,6 @@ export default function QuizPage() {
       );
       const pokemonData = await Promise.all(pokemonPromises);
       setPokemonData(pokemonData);
-      // Imposta il pokemon del quiz casualmente
       setQuizPokemon(
         pokemonData[Math.floor(Math.random() * pokemonData.length)]
       );
@@ -32,8 +34,13 @@ export default function QuizPage() {
     };
 
     getRandomPokemon();
-  }, []);
+    addCopyListener(); //anticheat copy
 
+    return () => {
+      //rimuovere l'anticheat copy
+      removeCopyListener();
+    };
+  }, [addCopyListener, removeCopyListener]);
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
     if (quizPokemon && name === quizPokemon.name) {
