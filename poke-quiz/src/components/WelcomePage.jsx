@@ -20,7 +20,7 @@ export default function WelcomePage() {
       <p className="m-5 text-xl">Hey! why are you here Trainer?</p>
       <p className="">
         {" "}
-        Oh, there why you are here, Will you be able to guess the name of these{" "}
+        Oh, there why you are here, will you be able to guess the name of these{" "}
         <span className="text-xl cursor-pointer font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl ">
           {" "}
           <a href="https://pokeapi.co/">Pokemon?</a>

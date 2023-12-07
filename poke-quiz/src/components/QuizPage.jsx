@@ -64,7 +64,7 @@ export default function QuizPage() {
         </Link>
       </div>
       <div className="max-w-screen-lg mx-auto">
-        <h1 className="text-center text-5xl font-bold mt-3 mb-4">Pokè Quiz</h1>
+        <h1 className="text-center text-5xl font-bold mt-2 mb-3">Pokè Quiz</h1>
         {quizPokemon && (
           <>
             <h3 className="text-xl m-3">
