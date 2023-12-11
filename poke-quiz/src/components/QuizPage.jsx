@@ -41,15 +41,17 @@ export default function QuizPage() {
       removeCopyListener();
     };
   }, [addCopyListener, removeCopyListener]);
+
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
     if (quizPokemon && name === quizPokemon.name) {
-      alert("Correct! You guessed the right Pokémon!");
+      alert("Nice!");
     } else {
       alert("Oops! Try again.");
     }
   };
 
+  //Loading screen
   if (loading) {
     return (
       <div className="app grid grid-cols-1 place-items-center">
@@ -66,9 +68,7 @@ export default function QuizPage() {
   return (
     <div className="App">
       <div className="back">
-        <Link to="/">
-          <a href="">👈 Back</a>
-        </Link>
+        <Link to="/">👈 Back</Link>
       </div>
       <div className="max-w-screen-lg mx-auto">
         <h1 className="text-center text-5xl font-bold mt-2 mb-3">Pokè Quiz</h1>
