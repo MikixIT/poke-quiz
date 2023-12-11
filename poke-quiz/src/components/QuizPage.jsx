@@ -9,6 +9,8 @@ export default function QuizPage() {
   const [loading, setLoading] = useState(true);
   const [quizPokemon, setQuizPokemon] = useState(null);
   const [pokeScore, setPokeScore] = useState(0);
+  const [attempts, setAttempts] = useState(0);
+  const maxAttempts = 2;
   const { addCopyListener, removeCopyListener } =
     useCopyToClipboard("do not cheat bro");
 
@@ -44,8 +46,12 @@ export default function QuizPage() {
 
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
+    setAttempts((prevAttempts) => prevAttempts + 1);
+
     if (quizPokemon && name === quizPokemon.name) {
       alert("Nice!");
+      setPokeScore(pokeScore + 1);
+      setAttempts(0);
     } else {
       alert("Oops! Try again.");
     }
@@ -63,6 +69,12 @@ export default function QuizPage() {
         <p className="drop-shadow-xl flicker text-6xl">Loading</p>
       </div>
     );
+  }
+
+  if (attempts == 2) {
+    alert("Game over!");
+    setAttempts(0);
+    setPokeScore(0);
   }
 
   return (
