@@ -14,27 +14,25 @@ export default function QuizPage() {
   const { addCopyListener, removeCopyListener } =
     useCopyToClipboard("do not cheat bro");
 
-  useEffect(() => {
-    const getRandomPokemon = async () => {
-      const randomPokemonNumbers = Array.from(
-        { length: 6 },
-        () => Math.floor(Math.random() * 1000) + 1
-      );
-      const pokemonPromises = randomPokemonNumbers.map((number) =>
-        fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then((response) =>
-          response.json()
-        )
-      );
-      const pokemonData = await Promise.all(pokemonPromises);
-      setPokemonData(pokemonData);
-      setQuizPokemon(
-        pokemonData[Math.floor(Math.random() * pokemonData.length)]
-      );
-      setTimeout(() => {
-        setLoading(false);
-      }, 2100);
-    };
+  const getRandomPokemon = async () => {
+    const randomPokemonNumbers = Array.from(
+      { length: 6 },
+      () => Math.floor(Math.random() * 1000) + 1
+    );
+    const pokemonPromises = randomPokemonNumbers.map((number) =>
+      fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then((response) =>
+        response.json()
+      )
+    );
+    const pokemonData = await Promise.all(pokemonPromises);
+    setPokemonData(pokemonData);
+    setQuizPokemon(pokemonData[Math.floor(Math.random() * pokemonData.length)]);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2100);
+  };
 
+  useEffect(() => {
     getRandomPokemon();
     addCopyListener(); //anticheat copy
 
@@ -52,6 +50,7 @@ export default function QuizPage() {
       alert("Nice!");
       setPokeScore(pokeScore + 1);
       setAttempts(0);
+      getRandomPokemon();
     } else {
       alert("Oops! Try again.");
     }
