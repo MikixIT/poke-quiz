@@ -15,6 +15,7 @@ function App() {
           <Route path="/" element={<WelcomePage />} />
           <Route path="/poke-quiz" element={<WelcomePage />} />
           <Route path="/quiz" element={<QuizPage />} />
+          <Route path="/Quiz" element={<QuizPage />} />
         </Routes>
       </div>
     </Router>
