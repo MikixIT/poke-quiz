@@ -80,7 +80,7 @@ export default function QuizPage() {
   return (
     <div className="App">
       <div className="back">
-        <Link to="/pokequiz">👈 Back</Link>
+        <Link to="/">👈 Back</Link>
       </div>
       <div className="max-w-screen-lg mx-auto">
         <h1 className="text-center text-5xl font-bold mt-2 mb-3">Pokè Quiz</h1>

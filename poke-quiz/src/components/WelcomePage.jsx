@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import pokeQuizLogo from "/poke-quiz-logo(createdByMikixiT).svg";
+// import Alert from "./Alert";
 
 export default function WelcomePage() {
   return (
