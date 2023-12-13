@@ -15,18 +15,27 @@ export default function QuizPage() {
     useCopyToClipboard("do not cheat bro");
 
   const getRandomPokemon = async () => {
-    const randomPokemonNumbers = Array.from(
-      { length: 6 },
-      () => Math.floor(Math.random() * 1000) + 1
-    );
-    const pokemonPromises = randomPokemonNumbers.map((number) =>
+    const randomPokemonNumbers = new Set();
+    const maxPokemonId = 998; // Supponendo che ci siano 898 Pokémon in PokéAPI
+
+    // Continua ad aggiungere numeri casuali al Set finché non raggiunge la dimensione di 6
+    while (randomPokemonNumbers.size < 6) {
+      const randomNumber = Math.floor(Math.random() * maxPokemonId) + 1;
+      randomPokemonNumbers.add(randomNumber);
+    }
+
+    // Converti il Set in un array per il fetching dei dati Pokémon
+    const pokemonPromises = Array.from(randomPokemonNumbers).map((number) =>
       fetch(`https://pokeapi.co/api/v2/pokemon/${number}`).then((response) =>
         response.json()
       )
     );
+
     const pokemonData = await Promise.all(pokemonPromises);
     setPokemonData(pokemonData);
     setQuizPokemon(pokemonData[Math.floor(Math.random() * pokemonData.length)]);
+
+    // Simula un tempo di caricamento, poi imposta il caricamento su false
     setTimeout(() => {
       setLoading(false);
     }, 2100);
