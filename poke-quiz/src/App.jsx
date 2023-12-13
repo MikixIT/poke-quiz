@@ -12,7 +12,7 @@ function App() {
     <Router>
       <div>
         <Routes>
-          <Route path="/" element={<Navigate replace to="/poke-quiz" />} />
+          <Route path="/" element={<WelcomePage />} />
           <Route path="/poke-quiz" element={<WelcomePage />} />
           <Route path="/quiz" element={<QuizPage />} />
         </Routes>

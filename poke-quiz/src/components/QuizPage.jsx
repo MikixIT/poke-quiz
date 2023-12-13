@@ -47,6 +47,7 @@ export default function QuizPage() {
     setAttempts((prevAttempts) => prevAttempts + 1);
 
     if (quizPokemon && name === quizPokemon.name) {
+      //temp using alert
       alert("Nice!");
       setPokeScore(pokeScore + 1);
       setAttempts(0);
@@ -79,7 +80,7 @@ export default function QuizPage() {
   return (
     <div className="App">
       <div className="back">
-        <Link to="/">👈 Back</Link>
+        <Link to="/pokequiz">👈 Back</Link>
       </div>
       <div className="max-w-screen-lg mx-auto">
         <h1 className="text-center text-5xl font-bold mt-2 mb-3">Pokè Quiz</h1>
