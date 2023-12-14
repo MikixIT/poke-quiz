@@ -19,9 +19,8 @@ export default function QuizPage() {
 
   const getRandomPokemon = async () => {
     const randomPokemonNumbers = new Set();
-    const maxPokemonId = 998; // Supponendo che ci siano 898 Pokémon in PokéAPI
+    const maxPokemonId = 998;
 
-    // Continua ad aggiungere numeri casuali al Set finché non raggiunge la dimensione di 6
     while (randomPokemonNumbers.size < 6) {
       const randomNumber = Math.floor(Math.random() * maxPokemonId) + 1;
       randomPokemonNumbers.add(randomNumber);
@@ -54,6 +53,10 @@ export default function QuizPage() {
     };
   }, [addCopyListener, removeCopyListener]);
 
+  const gameOverData = () => {
+    navigate("/gameover", { state: { pokeScore } });
+  };
+
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
     setAttempts((prevAttempts) => prevAttempts + 1);
@@ -64,14 +67,18 @@ export default function QuizPage() {
       setPokeScore(pokeScore + 1);
       setAttempts(0);
       getRandomPokemon();
+      console.log(attempts);
     }
     if (attempts >= 1) {
       alert("Oh no! GAMEOVER");
       setGameOver(true);
       navigate("/gameover");
+      gameOverData();
+      console.log(attempts);
     } else {
       alert("Oops! Try again.");
       setAttempts(attempts + 1);
+      console.log(attempts);
     }
   };
 
