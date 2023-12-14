@@ -3,6 +3,7 @@ import PokemonCard from "./PokemonCard";
 import { useState, useEffect } from "react";
 import pikaLoading from "/src/assets/pika-loading.gif";
 import { useCopyToClipboard } from "./Copyclipboard";
+import { useNavigate } from "react-router-dom";
 
 export default function QuizPage() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -10,6 +11,8 @@ export default function QuizPage() {
   const [quizPokemon, setQuizPokemon] = useState(null);
   const [pokeScore, setPokeScore] = useState(0);
   const [attempts, setAttempts] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
+  const navigate = useNavigate();
   const maxAttempts = 2;
   const { addCopyListener, removeCopyListener } =
     useCopyToClipboard("do not cheat bro");
@@ -38,7 +41,7 @@ export default function QuizPage() {
     // Simula un tempo di caricamento, poi imposta il caricamento su false
     setTimeout(() => {
       setLoading(false);
-    }, 2100);
+    }, 1700);
   };
 
   useEffect(() => {
@@ -61,8 +64,14 @@ export default function QuizPage() {
       setPokeScore(pokeScore + 1);
       setAttempts(0);
       getRandomPokemon();
+    }
+    if (attempts >= 1) {
+      alert("Oh no! GAMEOVER");
+      setGameOver(true);
+      navigate("/gameover");
     } else {
       alert("Oops! Try again.");
+      setAttempts(attempts + 1);
     }
   };
 
