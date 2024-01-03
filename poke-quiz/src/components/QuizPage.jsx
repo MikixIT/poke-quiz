@@ -68,16 +68,16 @@ export default function QuizPage() {
       setAttempts(0);
       getRandomPokemon();
       console.log(attempts);
+    } else {
+      alert("Oops! Try again.");
+      setAttempts(attempts + 1);
+      console.log(attempts);
     }
     if (attempts >= 1) {
       alert("Oh no! GAMEOVER");
       setGameOver(true);
       navigate("/gameover");
       gameOverData();
-      console.log(attempts);
-    } else {
-      alert("Oops! Try again.");
-      setAttempts(attempts + 1);
       console.log(attempts);
     }
   };
