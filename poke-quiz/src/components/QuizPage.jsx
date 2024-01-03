@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
+import { useCallback } from "react";
 import { useState, useEffect } from "react";
 import pikaLoading from "/src/assets/pika-loading.gif";
 import { useCopyToClipboard } from "./Copyclipboard";
@@ -53,9 +54,9 @@ export default function QuizPage() {
     };
   }, [addCopyListener, removeCopyListener]);
 
-  const gameOverData = () => {
+  const gameOverData = useCallback(() => {
     navigate("/gameover", { state: { pokeScore } });
-  };
+  }, [navigate, pokeScore]);
 
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
@@ -67,20 +68,20 @@ export default function QuizPage() {
       setPokeScore(pokeScore + 1);
       setAttempts(0);
       getRandomPokemon();
-      console.log(attempts);
     } else {
       alert("Oops! Try again.");
       setAttempts(attempts + 1);
-      console.log(attempts);
-    }
-    if (attempts >= 1) {
-      alert("Oh no! GAMEOVER");
-      setGameOver(true);
-      navigate("/gameover");
-      gameOverData();
-      console.log(attempts);
     }
   };
+
+  useEffect(() => {
+    if (attempts >= maxAttempts) {
+      // Sostituisci con il numero massimo di tentativi consentiti
+      alert("Game Over!");
+      setGameOver(true);
+      gameOverData();
+    }
+  }, [attempts, gameOverData]);
 
   //Loading screen
   if (loading) {
@@ -94,12 +95,6 @@ export default function QuizPage() {
         <p className="drop-shadow-xl flicker text-6xl">Loading</p>
       </div>
     );
-  }
-
-  if (attempts == 2) {
-    alert("Game over!");
-    setAttempts(0);
-    setPokeScore(0);
   }
 
   return (
