@@ -2,9 +2,11 @@ import { Link } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import { useCallback } from "react";
 import { useState, useEffect } from "react";
-import pikaLoading from "/src/assets/pika-loading.gif";
 import { useCopyToClipboard } from "./Copyclipboard";
 import { useNavigate } from "react-router-dom";
+import Alert from "./Alert";
+import pokeQuizLogo from "/poke-quiz-logo(createdByMikixiT).svg";
+import LoadingScreen from "./LoadingScreen";
 
 export default function QuizPage() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -85,16 +87,7 @@ export default function QuizPage() {
 
   //Loading screen
   if (loading) {
-    return (
-      <div className="app grid grid-cols-1 place-items-center">
-        <img
-          src={pikaLoading}
-          alt="pika-loading"
-          className="items-center mb-5 w-60 drop-shadow-xl mt-28"
-        />
-        <p className="drop-shadow-xl flicker text-6xl">Loading</p>
-      </div>
-    );
+    return <LoadingScreen />;
   }
 
   return (
@@ -103,7 +96,15 @@ export default function QuizPage() {
         <Link to="/">👈 Back</Link>
       </div>
       <div className="max-w-screen-lg mx-auto">
-        <h1 className="text-center text-5xl font-bold mt-2 mb-3">Pokè Quiz</h1>
+        <div className="flex justify-center">
+          <a href="#">
+            <img
+              src={pokeQuizLogo}
+              alt="logo"
+              className="w-32 flex justify-center"
+            />
+          </a>
+        </div>
         {quizPokemon && (
           <>
             <h3 className="text-xl m-3">

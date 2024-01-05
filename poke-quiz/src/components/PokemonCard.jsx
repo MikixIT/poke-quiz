@@ -6,11 +6,12 @@ export default function PokemonCard({ name, image, onClick }) {
       className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-red-600 dark:border-red-600"
       onClick={onClick}
     >
-      <div className="flex justify-center w-100 h-40 cursor-pointer">
-        <img className="object-cover p-1 items-center" src={image} alt={name} />
-      </div>
-      <div className="p-5">
-        <h5 className="mb-2 text-5xl font-bold tracking-tight text-gray-900 dark:text-white"></h5>
+      <div className="flex justify-center h-52 cursor-pointer">
+        <img
+          className="object-cover items-center w-48"
+          src={image}
+          alt={name}
+        />
       </div>
     </div>
   );
