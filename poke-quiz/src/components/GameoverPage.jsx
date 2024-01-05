@@ -20,7 +20,11 @@ export default function GameoverPage() {
   return (
     <>
       <div className="flex justify-center">
-        <img src={chosenValue} alt="pika escape" />
+        <img
+          src={chosenValue}
+          alt="pika escape"
+          className="w-64 h-64 object-contain"
+        />
       </div>
       <h1 className="text-5xl mt-2 mb-10">Game Over!</h1>
 
