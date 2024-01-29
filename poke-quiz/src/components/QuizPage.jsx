@@ -58,7 +58,8 @@ export default function QuizPage() {
 
   const gameOverData = useCallback(() => {
     navigate("/gameover", { state: { pokeScore } });
-  }, [navigate, pokeScore]);
+    console.log(gameOver)
+  }, [navigate, pokeScore, gameOver]);
 
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
@@ -78,10 +79,9 @@ export default function QuizPage() {
 
   useEffect(() => {
     if (attempts >= maxAttempts) {
-      // Sostituisci con il numero massimo di tentativi consentiti
-      alert("Game Over!");
+      //il numero massimo di tentativi consentiti
       setGameOver(true);
-      gameOverData();
+      // gameOverData();
     }
   }, [attempts, gameOverData]);
 
@@ -92,6 +92,7 @@ export default function QuizPage() {
 
   return (
     <div className="App">
+      <Alert title="GAME OVER" message="oh no! you lost, continue to see results and rankings!" buttonMessage="Continue!" redirectButton={gameOverData} trigger={gameOver}></Alert>
       <div className="back">
         <Link to="/">👈 Back</Link>
       </div>
