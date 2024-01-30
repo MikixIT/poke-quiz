@@ -7,8 +7,8 @@
 Will you be able to guess the name of these Pokemon? <br>
 Try the challenge created by Michael, made for you!**  <br>
 
+# [PLAY NOW](https://mikixit.github.io/poke-quiz/)
 
-[PLAY NOW](https://mikixit.github.io/poke-quiz/)
 
 # info
 
