@@ -7,7 +7,8 @@ import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 import pokeQuizLogo from "/poke-quiz-logo(createdByMikixiT).svg";
 import LoadingScreen from "./LoadingScreen";
-import Banner from "./Banner";
+import BannerRed from "./BannerRed";
+import BannerGreen from "./BannerGreen";
 
 export default function QuizPage() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -104,18 +105,6 @@ export default function QuizPage() {
         redirectButton={gameOverData}
         trigger={gameOver}
       ></Alert>
-      <Banner
-        title="Nice!"
-        message="+1 LETS GO!"
-        trigger={guessedPoke === true}
-        color="green"
-      ></Banner>
-      <Banner
-        title="Opsss!"
-        message="Last try! THINK!"
-        trigger={badTry === true}
-        color="green"
-      ></Banner>
       <div className="back">
         <Link to="/">👈 Back</Link>
       </div>
@@ -139,6 +128,16 @@ export default function QuizPage() {
               look like?
             </h3>
             <h4>Pokè score: {pokeScore}</h4>
+            <BannerGreen
+              title="Nice!"
+              message="+1 LETS GO!"
+              trigger={guessedPoke === true}
+            ></BannerGreen>
+            <BannerRed
+              title="Opsss!"
+              message="Last try! THINK!"
+              trigger={badTry === true}
+            ></BannerRed>
           </>
         )}
         <div className="grid grid-cols-3 gap-4 p-4">
