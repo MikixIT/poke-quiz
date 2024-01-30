@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import Alert from "./Alert";
 import pokeQuizLogo from "/poke-quiz-logo(createdByMikixiT).svg";
 import LoadingScreen from "./LoadingScreen";
+import Banner from "./Banner";
 
 export default function QuizPage() {
   const [pokemonData, setPokemonData] = useState([]);
@@ -15,6 +16,8 @@ export default function QuizPage() {
   const [pokeScore, setPokeScore] = useState(0);
   const [attempts, setAttempts] = useState(0);
   const [gameOver, setGameOver] = useState(false);
+  const [guessedPoke, setGuessedPoke] = useState(false);
+  const [badTry, setBadTry] = useState(false);
   const navigate = useNavigate();
   const maxAttempts = 2;
   const { addCopyListener, removeCopyListener } =
@@ -43,7 +46,7 @@ export default function QuizPage() {
     // Simula un tempo di caricamento, poi imposta il caricamento su false
     setTimeout(() => {
       setLoading(false);
-    }, 1700);
+    }, 1300);
   };
 
   useEffect(() => {
@@ -58,7 +61,7 @@ export default function QuizPage() {
 
   const gameOverData = useCallback(() => {
     navigate("/gameover", { state: { pokeScore } });
-    console.log(gameOver)
+    console.log(gameOver);
   }, [navigate, pokeScore, gameOver]);
 
   // Funzione per controllare se la risposta è corretta
@@ -66,12 +69,14 @@ export default function QuizPage() {
     setAttempts((prevAttempts) => prevAttempts + 1);
 
     if (quizPokemon && name === quizPokemon.name) {
-      //temp using alert
-      alert("Nice!");
+      //temp using alert (NICE!)
+      setGuessedPoke(true);
       setPokeScore(pokeScore + 1);
       setAttempts(0);
       getRandomPokemon();
     } else {
+      // (TRY AGAIN!)
+      setBadTry(true);
       alert("Oops! Try again.");
       setAttempts(attempts + 1);
     }
@@ -92,7 +97,25 @@ export default function QuizPage() {
 
   return (
     <div className="App">
-      <Alert title="GAME OVER" message="oh no! you lost, continue to see results and rankings!" buttonMessage="Continue!" redirectButton={gameOverData} trigger={gameOver}></Alert>
+      <Alert
+        title="GAME OVER"
+        message="oh no! you lost, continue to see results and rankings!"
+        buttonMessage="Continue!"
+        redirectButton={gameOverData}
+        trigger={gameOver}
+      ></Alert>
+      <Banner
+        title="Nice!"
+        message="+1 LETS GO!"
+        trigger={guessedPoke == true}
+        color="green"
+      ></Banner>
+      <Banner
+        title="Opsss!"
+        message="Last try! THINK!"
+        trigger={badTry == true}
+        color="green"
+      ></Banner>
       <div className="back">
         <Link to="/">👈 Back</Link>
       </div>
