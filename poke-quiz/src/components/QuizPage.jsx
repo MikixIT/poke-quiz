@@ -107,13 +107,13 @@ export default function QuizPage() {
       <Banner
         title="Nice!"
         message="+1 LETS GO!"
-        trigger={guessedPoke == true}
+        trigger={guessedPoke === true}
         color="green"
       ></Banner>
       <Banner
         title="Opsss!"
         message="Last try! THINK!"
-        trigger={badTry == true}
+        trigger={badTry === true}
         color="green"
       ></Banner>
       <div className="back">
