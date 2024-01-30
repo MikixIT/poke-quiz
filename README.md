@@ -4,7 +4,7 @@
 
 
 **Hey! Welcome Dear Trainer! <br>
-Hey! will you be able to guess the name of these Pokemon? <br>
+Will you be able to guess the name of these Pokemon? <br>
 Try the challenge created by Michael, made for you!**  <br>
 
 
