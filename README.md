@@ -3,7 +3,7 @@
 <br>
 
 
-**Welcome Dear Trainer!
+**Hey! Welcome Dear Trainer!
 Hey! will you be able to guess the name of these Pokemon?
 Try the challenge created by Michael, made for you!**
 
