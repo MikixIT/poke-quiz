@@ -5,7 +5,7 @@
 
 **Hey! Welcome Dear Trainer! 🔴 <br>
 Will you be able to guess the name of these Pokemon? <br>
-Try the challenge created by [Michael](https://mikixit.github.io/poke-quiz/](https://www.linkedin.com/in/michaeltorresdeveloper/), made for you!**  <br>
+Try the challenge created by [Michael](https://www.linkedin.com/in/michaeltorresdeveloper/), made for you!**  <br>
 
 # [🎮 PLAY NOW](https://mikixit.github.io/poke-quiz/)
 
