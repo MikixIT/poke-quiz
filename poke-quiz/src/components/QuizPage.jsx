@@ -114,13 +114,13 @@ export default function QuizPage() {
             <img
               src={pokeQuizLogo}
               alt="logo"
-              className="w-32 flex justify-center"
+              className="w-24 flex justify-center"
             />
           </a>
         </div>
         {quizPokemon && (
           <>
-            <h3 className="text-xl m-3">
+            <h3 className="text-xl m-1">
               What does{" "}
               <span className="text-4xl cursor-pointer font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl">
                 {quizPokemon.name}
@@ -128,11 +128,11 @@ export default function QuizPage() {
               look like?
             </h3>
             <h4>Pokè score: {pokeScore}</h4>
-            <BannerGreen
+            {/* <BannerGreen
               title="Nice!"
               message="+1 LETS GO!"
               trigger={guessedPoke === true}
-            ></BannerGreen>
+            ></BannerGreen> */}
             <BannerRed
               title="Opsss!"
               message="Last try! THINK!"
@@ -140,7 +140,7 @@ export default function QuizPage() {
             ></BannerRed>
           </>
         )}
-        <div className="grid grid-cols-3 gap-4 p-4">
+        <div className="grid grid-cols-3 gap-4 p-2">
           {pokemonData.map((pokemon) => (
             <PokemonCard
               key={pokemon.id}
