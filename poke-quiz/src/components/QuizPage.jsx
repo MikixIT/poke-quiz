@@ -115,13 +115,6 @@ export default function QuizPage() {
 
   return (
     <div className="App">
-      <Alert
-        title="GAME OVER"
-        message="oh no! you lost, continue to see results and rankings!"
-        buttonMessage="Continue!"
-        redirectButton={gameOverData}
-        trigger={gameOver}
-      ></Alert>
       <div className="back">
         <Link to="/">👈 Back</Link>
       </div>
@@ -144,7 +137,13 @@ export default function QuizPage() {
               </span>{" "}
               look like?
             </h3>
-            <h4>Pokè score: {pokeScore}</h4>
+            {/* //POKEMON SCORE 🔴 */}
+            <h4 className="text-2xl">
+              Points:{" "}
+              <span className="text-2xl cursor-pointer font-extrabold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-2xl">
+                {pokeScore}
+              </span>
+            </h4>
             <BannerGreen
               title="Nice!"
               message="+1 LETS GO!"
@@ -157,6 +156,13 @@ export default function QuizPage() {
             ></BannerRed>
           </>
         )}
+        <Alert
+          title="GAME OVER"
+          message="oh no! you lost, continue to see results and rankings!"
+          buttonMessage="Continue!"
+          redirectButton={gameOverData}
+          trigger={gameOver}
+        ></Alert>
         <div className="grid grid-cols-3 gap-4 p-2">
           {pokemonData.map((pokemon) => (
             <PokemonCard
