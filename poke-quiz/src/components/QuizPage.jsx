@@ -47,7 +47,7 @@ export default function QuizPage() {
     // Simula un tempo di caricamento, poi imposta il caricamento su false
     setTimeout(() => {
       setLoading(false);
-    }, 1300);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -78,7 +78,6 @@ export default function QuizPage() {
     } else {
       // (TRY AGAIN!)
       setBadTry(true);
-      alert("Oops! Try again.");
       setAttempts(attempts + 1);
     }
   };
@@ -90,6 +89,24 @@ export default function QuizPage() {
       // gameOverData();
     }
   }, [attempts, gameOverData]);
+
+  useEffect(() => {
+    if (guessedPoke) {
+      const timer = setTimeout(() => {
+        setGuessedPoke(false);
+      }, 2500); // Il banner scomparirà dopo 2+ secondi
+      return () => clearTimeout(timer);
+    }
+  }, [guessedPoke]);
+
+  useEffect(() => {
+    if (badTry) {
+      const timer = setTimeout(() => {
+        setBadTry(false);
+      }, 2500); // Il banner scomparirà dopo 2+ secondi
+      return () => clearTimeout(timer);
+    }
+  }, [badTry]);
 
   //Loading screen
   if (loading) {
@@ -128,15 +145,15 @@ export default function QuizPage() {
               look like?
             </h3>
             <h4>Pokè score: {pokeScore}</h4>
-            {/* <BannerGreen
+            <BannerGreen
               title="Nice!"
               message="+1 LETS GO!"
-              trigger={guessedPoke === true}
-            ></BannerGreen> */}
+              trigger={guessedPoke}
+            ></BannerGreen>
             <BannerRed
               title="Opsss!"
               message="Last try! THINK!"
-              trigger={badTry === true}
+              trigger={badTry}
             ></BannerRed>
           </>
         )}

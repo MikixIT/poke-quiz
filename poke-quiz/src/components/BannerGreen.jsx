@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 
 function BannerGreen(props) {
-  return (
+  return props.trigger ? (
     <div role="alert">
       <div className={`bg-green-500 text-white font-bold rounded-t px-4 py-2`}>
         {props.title}
@@ -12,7 +12,7 @@ function BannerGreen(props) {
         {props.message}
       </div>
     </div>
-  );
+  ) : null;
 }
 
 export default BannerGreen;
@@ -20,4 +20,5 @@ export default BannerGreen;
 BannerGreen.propTypes = {
   title: PropTypes.string.isRequired,
   message: PropTypes.string,
+  trigger: PropTypes.bool,
 };
