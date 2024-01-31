@@ -28,17 +28,22 @@ export default function GameoverPage() {
       </div>
       <h1 className="text-5xl mt-2 mb-10">Game Over!</h1>
 
-      <h2 className="text-2xl">Your score: {pokeScore}</h2>
+      <h2 className="text-4xl cursor-pointer font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl">
+        Your score: {pokeScore}
+      </h2>
       {/* turn this into a component ⬇️ */}
-      <h1 className="m-5 mb-14 font-extrabold"> 
+      <h1 className="m-5 mb-14 font-extrabold">
         Classifica: <br /> 1. PIERINO 900 POINTS <br />
         2. CICCIO 700 POINTS <br />3 PEPPINO 600 POINTS
-      </h1> 
+      </h1>
       <Link to="/Quiz">
         <button className="text-5xl relative -top-1 -left-1 bg-red-600 py-2.5 px-5 font-medium uppercase text-white transition-all before:absolute before:top-1 before:left-1 before:-z-[1] before:h-full before:w-full before:border-2 before:border-red-800 before:transition-all before:content-[''] hover:top-0 hover:left-0 before:hover:top-0 before:hover:left-0">
           Play Again!
         </button>
       </Link>
+      <div className="back m-4">
+        <Link to="/">OR 👈 Back</Link>
+      </div>
     </>
   );
 }
