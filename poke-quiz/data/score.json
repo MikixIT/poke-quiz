@@ -1,5 +1,6 @@
 [
-  { "username": "utente1", "score": 150 },
-  { "username": "utente2", "score": 120 },
-  { "username": "utente3", "score": 100 }
+  { "name": "utente1", "score": 150 },
+  { "name": "utente2", "score": 120 },
+  { "name": "utente3", "score": 100 },
+  { "name": "utente4", "score": 100 }
 ]
