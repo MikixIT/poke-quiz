@@ -1,16 +1,19 @@
 import { useState, useEffect } from "react";
-
 function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
 
-  useEffect(() => {
-    fetch("data/score.json")
-      .then((response) => response.json())
-      .then((data) => setLeaderboard(data))
-      .catch((error) =>
-        console.error("Can't load data Can't load data correctly", error)
-      );
-  }, []);
+  // const fetchScores = async () => {
+  //   try {
+  //     let response = await database.listDocuments("65c25653d2add07cc274");
+  //     setLeaderboard(response.documents);
+  //   } catch (error) {
+  //     console.error("Can't load leaderboard data correctly", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchScores();
+  // }, []);
 
   return (
     <div className="m-6">
