@@ -16,7 +16,7 @@ Try the challenge created by [Michael](https://www.linkedin.com/in/michaeltorres
 API: https://pokeapi.co/ X
 
 ℹ️ Overview
-I'm excited to present my latest project: Pokémon Quiz! This app is a fun quiz that tests your knowledge of Pokémon. You can compete with other fans to see who is the real Pokémon expert and climb our leaderboard!
+I'm excited to present my latest project: Pokémon Quiz! This app is a fun quiz that tests your knowledge of Pokémon. You can compete with other fans to see who is the real Pokémon expert!
 
 🔨 Technologies Used
 To create the Pokémon Quiz, I used the following technologies:
