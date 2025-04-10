@@ -135,7 +135,7 @@ export default function QuizPage() {
               <span className="text-4xl cursor-pointer font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient drop-shadow-xl">
                 {quizPokemon.name}
               </span>{" "}
-              look like?
+              looks like?
             </h3>
             {/* //POKEMON SCORE 🔴 */}
             <h4 className="text-2xl">
