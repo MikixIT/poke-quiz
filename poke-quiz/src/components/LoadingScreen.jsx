@@ -7,7 +7,7 @@ function LoadingScreen() {
       <img
         src={pikaLoading}
         alt="pika-loading"
-        className="items-center mb-5 w-60 drop-shadow-xl mt-28"
+        className="items-center mb-5 w-60 drop-shadow-xl mt-64"
       />
       <p className="drop-shadow-xl flicker text-6xl">Loading</p>
     </div>
