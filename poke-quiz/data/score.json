@@ -1,6 +1,6 @@
 [
-  { "name": "utente1", "score": 150 },
-  { "name": "utente2", "score": 120 },
-  { "name": "utente3", "score": 100 },
-  { "name": "utente4", "score": 100 }
+  { "name": "Luka", "score": 30 },
+  { "name": "Lionel", "score": 10 },
+  { "name": "Roger", "score": 8 },
+  { "name": "Beppe", "score": 3 }
 ]
