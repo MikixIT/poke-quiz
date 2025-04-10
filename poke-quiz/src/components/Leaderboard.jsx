@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+<<<<<<< HEAD
 import PropTypes from "prop-types";
 
 function Leaderboard({ positionsAvailable }) {
@@ -22,6 +23,23 @@ function Leaderboard({ positionsAvailable }) {
         console.error("Can't load leaderboard data correctly", error)
       );
   }, []);
+=======
+function Leaderboard() {
+  const [leaderboard, setLeaderboard] = useState([]);
+
+  // const fetchScores = async () => {
+  //   try {
+  //     let response = await database.listDocuments("65c25653d2add07cc274");
+  //     setLeaderboard(response.documents);
+  //   } catch (error) {
+  //     console.error("Can't load leaderboard data correctly", error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchScores();
+  // }, []);
+>>>>>>> ca90ec1531847e4156106f023401bbcbd370bfdc
 
   const mergeLeaderboards = (initialLeaderboard, localLeaderboard) => {
     const combinedLeaderboard = [...initialLeaderboard, ...localLeaderboard];
