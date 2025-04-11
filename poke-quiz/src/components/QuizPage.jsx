@@ -23,6 +23,7 @@ export default function QuizPage() {
   const maxAttempts = 2;
   const { addCopyListener, removeCopyListener } =
     useCopyToClipboard("do not cheat bro");
+  const [showCorrectPokemon, setShowCorrectPokemon] = useState(false);
 
   const getRandomPokemon = async () => {
     const randomPokemonNumbers = new Set();
@@ -86,6 +87,7 @@ export default function QuizPage() {
     if (attempts >= maxAttempts) {
       //il numero massimo di tentativi consentiti
       setGameOver(true);
+      setShowCorrectPokemon(true);
       // gameOverData();
     }
   }, [attempts, gameOverData]);
@@ -128,6 +130,16 @@ export default function QuizPage() {
             />
           </a>
         </div>
+        {showCorrectPokemon && quizPokemon && (
+          <div className="text-center mt-4">
+            <h3 className="text-3xl font-bold">The correct Pokémon was:</h3>
+            <img
+              src={quizPokemon.sprites.front_default}
+              alt={quizPokemon.name}
+              className="w-48 mx-auto shadow-sm"
+            />
+          </div>
+        )}
         {quizPokemon && (
           <>
             <h3 className="text-xl m-1">
