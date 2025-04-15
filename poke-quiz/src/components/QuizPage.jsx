@@ -24,6 +24,7 @@ export default function QuizPage() {
   const { addCopyListener, removeCopyListener } =
     useCopyToClipboard("do not cheat bro");
   const [showCorrectPokemon, setShowCorrectPokemon] = useState(false);
+  const [isRoundActive, setIsRoundActive] = useState(true);
 
   const getRandomPokemon = async () => {
     const randomPokemonNumbers = new Set();
@@ -48,7 +49,7 @@ export default function QuizPage() {
     // Simula un tempo di caricamento, poi imposta il caricamento su false
     setTimeout(() => {
       setLoading(false);
-    }, 1000);
+    }, 200);
   };
 
   useEffect(() => {
@@ -68,6 +69,8 @@ export default function QuizPage() {
 
   // Funzione per controllare se la risposta è corretta
   const handleCardClick = (name) => {
+    if (!isRoundActive) return;
+
     setAttempts((prevAttempts) => prevAttempts + 1);
 
     if (quizPokemon && name === quizPokemon.name) {
@@ -75,7 +78,11 @@ export default function QuizPage() {
       setGuessedPoke(true);
       setPokeScore(pokeScore + 1);
       setAttempts(0);
-      getRandomPokemon();
+      setIsRoundActive(false);
+      setTimeout(() => {
+        getRandomPokemon();
+        setIsRoundActive(true);
+      }, 2300);
     } else {
       // (TRY AGAIN!)
       setBadTry(true);
@@ -88,6 +95,7 @@ export default function QuizPage() {
       //il numero massimo di tentativi consentiti
       setGameOver(true);
       setShowCorrectPokemon(true);
+      setIsRoundActive(false);
       // gameOverData();
     }
   }, [attempts, gameOverData]);
