@@ -1,44 +1,62 @@
-# poke-quiz
-![](poke-quiz/public/poke-quiz-logo(createdByMikixiT).svg) 
+# 🎮 poke-quiz  
+![](poke-quiz/public/poke-quiz-logo(createdByMikixiT).svg)  
 <br>
 
+**Hey Trainer! 🔴**  
+Think you can guess the name of these Pokémon?  
+Take on the challenge created by [Michael](https://www.linkedin.com/in/michaeltorresdeveloper/) — made just for you!
 
-**Hey! Welcome Dear Trainer! 🔴 <br>
-Will you be able to guess the name of these Pokemon? <br>
-Try the challenge created by [Michael](https://www.linkedin.com/in/michaeltorresdeveloper/), made for you!**  <br>
+👉 **[PLAY NOW](https://mikixit.github.io/poke-quiz/)**
 
-# [🎮 PLAY NOW](https://mikixit.github.io/poke-quiz/)
+---
 
+## ℹ️ Overview
 
-# info ℹ️
+**poke-quiz** is a fun and responsive quiz app where you guess the name of a Pokémon based on its sprite.  
+Built with **React** and **Tailwind CSS**, using the [PokéAPI](https://pokeapi.co/) to fetch all the data dynamically.
 
-*in this app with react and tailwind, I will create a quiz where with an image you have to guess the name of the correct pokemon, with an api that provides me with information about the pokemon.*
-API: https://pokeapi.co/ X
+---
 
-ℹ️ Overview
-I'm excited to present my latest project: Pokémon Quiz! This app is a fun quiz that tests your knowledge of Pokémon. You can compete with other fans to see who is the real Pokémon expert!
+## 🔧 Tech Stack
 
-🔨 Technologies Used
-To create the Pokémon Quiz, I used the following technologies:
-Front-end Framework: React.js, Tailwind CSS
-Made with Vine
-Hosting: GitHub Pages
-Pokémon API: Using PokéAPI to get Pokémon data dynamically -> https://pokeapi.co/
+- **React.js**  
+- **Tailwind CSS**  
+- **PokéAPI** – https://pokeapi.co/  
+- **Vite** (for fast development)  
+- **GitHub Pages** for deployment  
 
-▶️ Features
-There are 6 Pokè sprites to choose from and just one name to guess
-A possibility of error!
-Responsive and attractive Pokédex-style user interface
-Compatible with mobile and desktop devices
+---
 
-🔥 Contribute
-Are you interested in contributing to the project? Here's how you can help:
-Test the quiz: play and report bugs or problems
-Feature suggestions
-Improvements: code, design, documentation, any help is welcome!
+## ▶️ Features
 
-💬 Contacts
-If you have questions, suggestions, or just want to connect, feel free to visit my Linkedin and/or GitHub profile.
+- 6 random Pokémon sprites — only 1 name is correct  
+- Real-time answer feedback  
+- Pokédex-style interface  
+- Fully responsive for mobile and desktop  
+- Easy to play, hard to master 💪
 
-❤️‍🔥 Share and Support
-If you like the project, leave a ⭐ on the repository and share it with your trusted devs! Thanks for the support! 🫂
+---
+
+## 🔥 Contribute
+
+Wanna help out? Here’s how:
+- Test the game and report bugs 🐞  
+- Suggest new features or improvements  
+- Contribute code, design tweaks, or documentation  
+
+Every bit helps — feel free to open a PR or issue!
+
+---
+
+## 💬 Contact
+
+Questions, ideas, or just wanna connect?  
+- [LinkedIn – Michael Torres](https://www.linkedin.com/in/michaeltorresdeveloper/)  
+- [GitHub – MikixIT](https://github.com/MikixIT)
+
+---
+
+## ❤️‍🔥 Share & Support
+
+If you enjoyed the game, drop a ⭐ on the repo and share it with your dev squad!  
+Thanks for playing and supporting this little passion project 🫂
